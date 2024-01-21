@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <main className="overscroll-y-none">
 
-      <nav className="text-white w-full fixed top-0 z-10">
-        <div className="w-full backdrop-blur-md p-10">
+      <nav className="text-white w-full fixed top-0 z-10 bg-clip-padding border-b backdrop-filter backdrop-blur-md border-neutral-500">
+        <div className="w-full p-10">
           {/* actual content */}
           <div className="flex justify-between">
             {/* logo */}
@@ -36,7 +36,7 @@ export default function Home() {
               }}
             />
             <div className="flex flex-col justify-between font-light absolute text-white p-10 h-full">
-              <h2 className="text-5xl mt-20">
+              <h2 className="text-5xl mt-24">
                 We design tomorrow&apos;s success, today.
               </h2>
               <div className="w-full flex flex-col -space-y-[15vw] xl:space-y-0 xl:flex-row invisible sm:visible -m-10 px-4 font-normal">
@@ -53,7 +53,7 @@ export default function Home() {
                     Based in North America
                   </span>
                   <span className="opacity-60 font-light">
-                    Founded in 2001.
+                    Founded in 2024.
                   </span>
                 </div>
                 <div className="grid">
