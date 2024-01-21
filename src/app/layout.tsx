@@ -27,7 +27,7 @@ export default function RootLayout({
       GeistSans.variable,
       GeistMono.variable
     )}>
-      <body>
+      <body className="overscroll-y-none">
         <Providers>{children}
         </Providers>
       </body>

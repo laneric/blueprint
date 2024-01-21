@@ -8,8 +8,7 @@ const chillax = localFont({ src: '../../public/fonts/Chillax-Variable.ttf' })
 
 export default function Home() {
   return (
-    <main className="overscroll-y-none">
-
+    <main className="">
       <nav className="text-white w-full fixed top-0 z-10 bg-clip-padding border-b backdrop-filter backdrop-blur-md border-neutral-500">
         <div className="w-full p-10">
           {/* actual content */}
