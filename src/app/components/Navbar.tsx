@@ -9,7 +9,7 @@ const nav = [
 
 export default function Navbar({ }) {
     return (
-        <nav className="text-white w-full fixed top-0 z-10 bg-clip-padding border-b backdrop-filter backdrop-blur-md border-neutral-200">
+        <nav className="text-white w-full fixed top-0 z-10 bg-clip-padding border-b backdrop-filter backdrop-blur-md bg-neutral-50 bg-opacity-60 border-neutral-200">
             <div className="w-full p-10">
                 {/* actual content */}
                 <div className="flex justify-center lg:justify-between">

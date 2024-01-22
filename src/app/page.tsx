@@ -1,15 +1,37 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import localFont from 'next/font/local'
 import { Manrope, Rethink_Sans } from 'next/font/google'
 
 // components
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import ProjectShowcaseItem from './components/ProjectShowcaseItem';
 
 // fonts
 const manrope = Manrope({ subsets: ['latin'] })
 const rethink_sans = Rethink_Sans({ subsets: ['latin'] })
 const chillax = localFont({ src: '../../public/fonts/Chillax-Variable.ttf' })
+
+// helpers
+
+function ArrowIcon(props: { size: number }) {
+  let length = props.size.toString();
+  return (
+      <svg
+          width={length}
+          height={length}
+          viewBox="0 0 12 12"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+      >
+          <path
+              d="M2.07102 11.3494L0.963068 10.2415L9.2017 1.98864H2.83807L2.85227 0.454545H11.8438V9.46023H10.2955L10.3097 3.09659L2.07102 11.3494Z"
+              fill="currentColor"
+          />
+      </svg>
+  );
+}
 
 // items
 const ShowcaseItems = [
@@ -27,7 +49,7 @@ const ShowcaseItems = [
     name: "Nike",
     image: "/images/home/Nike.jpg",
     description: "Operating a global supply chain network",
-    span: 2
+    span: "full"
   },
 ]
 
@@ -74,19 +96,46 @@ export default function Home() {
         </div>
         <div className="bg-white p-10 w-full h-full">
           {/* this is the grid for the project showcase */}
-          <div className="grid grid-rows-3 grid-cols-2 gap-x-12 gap-y-28 my-10">
+          <div className="grid grid-rows-2 grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-28 my-10">
             {ShowcaseItems.map((company, index) => (
               <ProjectShowcaseItem 
               key={company.name}
               name={company.name}
               description={company.description}
               imagePath={company.image}
-              span={company.span || 1}
+              span={company.span || "1"}
               />
             ))}
           </div>
         </div>
       </div>
+      <div className="flex flex-col p-10">
+        <h1 className={`text-[6vw] w-4/6 font-medium text-balance leading-[5.2vw] tracking-tight ${rethink_sans.className}`}>
+          Engineer your vision, construct your future
+        </h1>
+        <h2 className="w-1/2 mt-16 text-xl text-balance">
+        Whether it&apos;s through meticulous planning, innovative solutions, or sustainable growth, we&apos;re here to guide you every step of the way.
+        </h2>
+        <div className="mt-5 flex flex-col md:flex-row gap-5 text-xl">
+          <Link 
+          href="/"
+          target="_blank"
+          className="flex items-center gap-1 underline underline-offset-4 decoration-1"
+          >
+            Our projects
+            <ArrowIcon size={12} />
+          </Link>
+          <Link 
+          href="/"
+          target="_blank"
+          className="flex items-center gap-1 underline underline-offset-4 decoration-1"
+          >
+            Our beliefs
+            <ArrowIcon size={12} />
+          </Link>
+        </div>
+      </div>
+      <Footer />
     </main>
   );
 }

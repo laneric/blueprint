@@ -5,35 +5,35 @@ import { Rethink_Sans } from 'next/font/google';
 // fonts
 const rethink_sans = Rethink_Sans({ subsets: ['latin'] })
 
-function ArrowIcon(props : {size : number}) {
+function ArrowIcon(props: { size: number }) {
     let length = props.size.toString();
     return (
-      <svg
-        width={length}
-        height={length}
-        viewBox="0 0 12 12"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M2.07102 11.3494L0.963068 10.2415L9.2017 1.98864H2.83807L2.85227 0.454545H11.8438V9.46023H10.2955L10.3097 3.09659L2.07102 11.3494Z"
-          fill="currentColor"
-        />
-      </svg>
+        <svg
+            width={length}
+            height={length}
+            viewBox="0 0 12 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                d="M2.07102 11.3494L0.963068 10.2415L9.2017 1.98864H2.83807L2.85227 0.454545H11.8438V9.46023H10.2955L10.3097 3.09659L2.07102 11.3494Z"
+                fill="currentColor"
+            />
+        </svg>
     );
-  }
+}
 
 export default function ProjectShowcaseItem({ name, description, imagePath, span }: {
     name: string,
     description: string,
     imagePath: string,
-    span: number
+    span: string
 }) {
     return (
-        <Link 
-        href={`/projects/${name}`}
-        className={`w-full h-full col-span-${span} group hover:cursor-pointer`}>
-            <div className="h-[60vh] relative betterhover:group-hover:shadow-xl grayscale betterhover:group-hover:grayscale-0 transition-all duration-300">
+        <Link
+            href={`/projects/${name}`}
+            className={`col-span-${span} group hover:cursor-pointer`}>
+            <div className="h-[20vh] md:h-[30vh] lg:h-[60vh] relative betterhover:group-hover:shadow-xl md:grayscale md:betterhover:group-hover:grayscale-0 transition-all duration-300">
                 <Image
                     src={imagePath}
                     alt={`${name}: ${description}`}
