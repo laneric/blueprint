@@ -10,7 +10,7 @@ import { Providers } from './providers';
 
 // site metadata/information
 export const metadata: Metadata = {
-  title: "design project",
+  title: "blueprint",
   description: "Testing things here and there",
 };
 
@@ -27,7 +27,7 @@ export default function RootLayout({
       GeistSans.variable,
       GeistMono.variable
     )}>
-      <body className="overscroll-y-none">
+      <body className="overscroll-y-auto">
         <Providers>{children}
         </Providers>
       </body>
